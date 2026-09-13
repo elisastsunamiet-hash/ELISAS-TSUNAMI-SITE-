@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ELISAS TSUNAMI | Gaming & Tecnologia</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      background: #020611;
+      line-height: 1.5;
+    }
+
+    /* LOGO NO FUNDO */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(
+          rgba(2, 6, 17, 0.88),
+          rgba(2, 6, 17, 0.95)
+        ),
+        url("logo.png") center center / cover no-repeat;
+
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          rgba(0, 119, 255, 0.18),
+          transparent 45%
+        );
+
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* MENU */
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(2, 7, 18, 0.95);
+      border-bottom: 1px solid rgba(0, 174, 255, 0.35);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 16px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      font-weight: 900;
+    }
+
+    .brand span {
+      color: #16bfff;
+    }
+
+    .mini-logo {
+      width: 52px;
+      height: 52px;
+
+      border-radius: 50%;
+      object-fit: cover;
+
+      border: 2px solid #12bfff;
+
+      box-shadow:
+        0 0 18px rgba(0, 174, 255, 0.65);
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+
+      padding: 9px 12px;
+
+      border-radius: 20px;
+
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .menu a:hover {
+      background: #087fff;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: calc(100vh - 77px);
+
+      max-width: 1200px;
+      margin: auto;
+
+      padding: 60px 18px 45px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+    }
+
+    .hero-card {
+      width: min(900px, 100%);
+
+      padding: 38px 22px;
+
+      border: 1px solid rgba(22, 191, 255, 0.35);
+
+      border-radius: 28px;
+
+      background: rgba(2, 10, 24, 0.68);
+
+      box-shadow:
+        0 0 45px rgba(0, 112, 255, 0.2);
+
+      backdrop-filter: blur(5px);
+    }
+
+    .hero-logo {
+      width: min(430px, 88vw);
+
+      max-height: 360px;
+
+      object-fit: contain;
+
+      border-radius: 20px;
+
+      filter:
+        drop-shadow(
+          0 0 22px rgba(0, 174, 255, 0.55)
+        );
+
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 7vw, 62px);
+      line-height: 1.05;
+    }
+
+    .blue {
+      color: #16bfff;
+    }
+
+    .hero p {
+      max-width: 720px;
+
+      margin: 15px auto 25px;
+
+      color: #d7e9ff;
+
+      font-size: 18px;
+    }
+
+    /* BOTÕES */
+
+    .buttons {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+
+      text-decoration: none;
+
+      color: white;
+
+      font-weight: 800;
+
+      padding: 13px 20px;
+
+      border-radius: 28px;
+
+      border: 1px solid rgba(255,255,255,0.18);
+
+      background:
+        linear-gradient(
+          135deg,
+          #0878ff,
+          #00bfff
+        );
+
+      box-shadow:
+        0 0 18px rgba(0,140,255,0.25);
+
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 0 25px rgba(0,174,255,0.55);
+    }
+
+    .btn.whatsapp {
+      background: #16b95b;
+    }
+
+    .btn.dark {
+      background: #07172d;
+    }
+
+    /* SEÇÕES */
+
+    section {
+      max-width: 1200px;
+
+      margin: auto;
+
+      padding: 65px 18px;
+    }
+
+    .section-title {
+      text-align: center;
+
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(27px, 5vw, 40px);
+    }
+
+    .section-title p {
+      color: #abc5df;
+
+      margin-top: 7px;
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(220px, 1fr)
+        );
+
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(5,17,36,0.88);
+
+      border:
+        1px solid
+        rgba(0,166,255,0.25);
+
+      border-radius: 20px;
+
+      padding: 24px 18px;
+
+      text-align: center;
+
+      box-shadow:
+        0 0 22px
+        rgba(0,80,180,0.13);
+    }
+
+    .icon {
+      font-size: 42px;
+
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #b7c9dc;
+
+      font-size: 14px;
+
+      margin-bottom: 17px;
+    }
+
+    .card .btn {
+      font-size: 14px;
+
+      padding: 10px 15px;
+    }
+
+    /* CONTACTO */
+
+    .contact {
+      text-align: center;
+
+      background:
+        rgba(3,15,32,0.9);
+
+      border-top:
+        1px solid
+        rgba(0,166,255,0.22);
+
+      border-bottom:
+        1px solid
+        rgba(0,166,255,0.22);
+
+      max-width: none;
+    }
+
+    .contact-inner {
+      max-width: 900px;
+
+      margin: auto;
+    }
+
+    .number {
+      margin: 14px 0 22px;
+
+      color: #16bfff;
+
+      font-size: 22px;
+
+      font-weight: 900;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      text-align: center;
+
+      padding: 28px 15px;
+
+      color: #91aac4;
+
+      background: #01040b;
+
+      font-size: 14px;
+    }
+
+    /* TELEMÓVEL */
+
+    @media (max-width: 700px) {
+
+      nav {
+        align-items: flex-start;
+      }
+
+      .brand strong {
+        font-size: 14px;
+      }
+
+      .mini-logo {
+        width: 44px;
+        height: 44px;
+      }
+
+      .menu {
+        gap: 3px;
+      }
+
+      .menu a {
+        font-size: 12px;
+
+        padding: 7px 8px;
+      }
+
+      .hero {
+        padding-top: 35px;
+      }
+
+      .hero-card {
+        padding: 25px 14px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 45px 14px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= MENU ================= -->
+
+  <header class="topbar">
+
+    <nav>
+
+      <div class="brand">
+
+        <img
+          src="logo.png"
+          class="mini-logo"
+          alt="Logo ELISAS TSUNAMI"
+        >
+
+        <strong>
+          ELISAS
+          <span>TSUNAMI</span>
+        </strong>
+
+      </div>
+
+      <div class="menu">
+
+        <a href="index.html">
+          Início
+        </a>
+
+        <a href="jogos.html">
+          Jogos
+        </a>
+
+        <a href="acessorios.html">
+          Acessórios
+        </a>
+
+        <a href="#reparacao">
+          Reparação
+        </a>
+
+        <a href="#contacto">
+          Contacto
+        </a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <!-- ================= INÍCIO ================= -->
+
+  <main>
+
+    <section
+      class="hero"
+      id="inicio"
+    >
+
+      <div class="hero-card">
+
+        <img
+          src="logo.png"
+          class="hero-logo"
+          alt="ELISAS TSUNAMI"
+        >
+
+        <h1>
+          JOGA SEM
+          <span class="blue">
+            LIMITES
+          </span>
+        </h1>
+
+        <p>
+
+          Gaming • Tecnologia • Acessórios • Reparação
+
+          <br>
+
+          Tudo num só lugar.
+
+        </p>
+
+
+        <div class="buttons">
+
+          <a
+            class="btn"
+            href="jogos.html"
+          >
+            🎮 Ver Jogos
+          </a>
+
+
+          <a
+            class="btn"
+            href="acessorios.html"
+          >
+            🕹️ Acessórios
+          </a>
+
+
+          <a
+            class="btn"
+            href="#reparacao"
+          >
+            🔧 Reparação
+          </a>
+
+
+          <a
+            class="btn whatsapp"
+            href="https://wa.me/244952497779?text=Olá%20ELISAS%20TSUNAMI!%20Quero%20saber%20mais%20sobre%20os%20serviços."
+            target="_blank"
+            rel="noopener"
+          >
+            💬 WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= JOGOS ================= -->
+
+    <section id="jogos">
+
+      <div class="section-title">
+
+        <h2>
+          🎮 Jogos
+        </h2>
+
+        <p>
+          Escolha a sua plataforma.
+        </p>
+
+      </div>
+
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="icon">
+            🎮
+          </div>
+
+          <h3>
+            PlayStation 3
+          </h3>
+
+          <p>
+            Jogos para PS3.
+          </p>
+
+          <a
+            class="btn"
+            href="jogos.html#ps3"
+          >
+            Ver jogos
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">
+            🎮
+          </div>
+
+          <h3>
+            PlayStation 4
+          </h3>
+
+          <p>
+            Jogos para PS4.
+          </p>
+
+          <a
+            class="btn"
+            href="jogos.html#ps4"
+          >
+            Ver jogos
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">
+            🎮
+          </div>
+
+          <h3>
+            PlayStation 5
+          </h3>
+
+          <p>
+            Jogos para PS5.
+          </p>
+
+          <a
+            class="btn"
+            href="jogos.html#ps5"
+          >
+            Ver jogos
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">
+            🟢
+          </div>
+
+          <h3>
+            Xbox
+          </h3>
+
+          <p>
+            Jogos para Xbox.
+          </p>
+
+          <a
+            class="btn"
+            href="jogos.html#xbox"
+          >
+            Ver jogos
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">
+            🎮
+          </div>
+
+          <h3>
+            PSP
+          </h3>
+
+          <p>
+            Jogos para PSP.
+          </p>
+
+          <a
+            class="btn"
+            href="jogos.html#psp"
+          >
+            Ver jogos
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= ACESSÓRIOS ================= -->
+
+    <section id="acessorios">
+
+      <div class="section-title">
+
+        <h2>
+          🕹️ Acessórios
+        </h2>
+
+        <p>
+          Controles, cabos, carregadores,
+          fones e muito mais.
+        </p>
+
+      </div>
+
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="icon">
+            🎮
+          </div>
+
+          <h3>
+            Controles
+          </h3>
+
+          <p>
+            PS3, PS4, PS5 e Xbox.
+          </p>
+
+          <a
+            class="btn"
+            href="acessorios.html"
+          >
+            Ver acessórios
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">
+            🔌
+          </div>
+
+          <h3>
+            Cabos
+          </h3>
+
+          <p>
+            USB, HDMI e outros.
+          </p>
+
+          <a
+            class="btn"
+            href="acessorios.html"
+          >
+            Ver acessórios
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">
+            🎧
+          </div>
+
+          <h3>
+            Fones Gamer
+          </h3>
+
+          <p>
+            Headsets para gaming.
+          </p>
+
+          <a
+            class="btn"
+            href="acessorios.html"
+          >
+            Ver acessórios
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">
+            💾
+          </div>
+
+          <h3>
+            Armazenamento
+          </h3>
+
+          <p>
+            Discos e soluções de armazenamento.
+          </p>
+
+          <a
+            class="btn"
+            href="acessorios.html"
+          >
+            Ver acessórios
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= REPARAÇÃO ================= -->
+
+    <section id="reparacao">
+
+      <div class="section-title">
+
+        <h2>
+          🔧 Reparação e Assistência
+        </h2>
+
+        <p>
+          Assistência para controles,
+          consolas, placas e componentes.
+        </p>
+
+      </div>
+
+
+      <div class="cards">
+
+        <div class="card">
+
+          <div class="icon">
+            🎮
+          </div>
+
+          <h3>
+            Reparação de Controles
+          </h3>
+
+          <p>
+            Problemas de botões,
+            analógicos, carregamento e outros.
+          </p>
+
+          <a
+            class="btn whatsapp"
+            href="https://wa.me/244952497779?text=Olá%20ELISAS%20TSUNAMI!%20Quero%20solicitar%20reparação%20de%20um%20controle."
+            target="_blank"
+            rel="noopener"
+          >
+            Solicitar reparação
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="icon">
+            🛠️
+          </div>
+
+          <h3>
+            Consolas e Placas
+          </h3>
+
+          <p>
+            Diagnóstico e assistência técnica.
+          </p>
+
+          <a
+            class="btn whatsapp"
+            href="https://wa.me/244952497779?text=Olá%20ELISAS%20TSUNAMI!%20Quero%20solicitar%20assistência%20para%20uma%20consola."
+            target="_blank"
+            rel="noopener"
+          >
+            Solicitar assistência
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CONTACTO ================= -->
+
+    <section
+      id="contacto"
+      class="contact"
+    >
+
+      <div class="contact-inner">
+
+        <div class="section-title">
+
+          <h2>
+            📱 Fale com a ELISAS TSUNAMI
+          </h2>
+
+          <p>
+            Faça o seu pedido diretamente
+            pelo WhatsApp Business.
+          </p>
+
+        </div>
+
+
+        <div class="number">
+
+          +244 952 497 779
+
+        </div>
+
+
+        <div class="buttons">
+
+          <a
+            class="btn whatsapp"
+            href="https://wa.me/244952497779?text=Olá%20ELISAS%20TSUNAMI!%20Vim%20pelo%20site."
+            target="_blank"
+            rel="noopener"
+          >
+            💬 Abrir WhatsApp
+          </a>
+
+
+          <a
+            class="btn dark"
+            href="acessorios.html"
+          >
+            🕹️ Ver acessórios
+          </a>
+
+
+          <a
+            class="btn dark"
+            href="jogos.html"
+          >
+            🎮 Ver jogos
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= RODAPÉ ================= -->
+
+  <footer>
+
+    <p>
+      © 2026 ELISAS TSUNAMI
+    </p>
+
+    <p>
+      Gaming • Tecnologia • Reparação
+    </p>
+
+  </footer>
+
+</body>
+</html>
