@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acessórios | ELISAS TSUNAMI</title>
+
+    <meta name="description"
+          content="Acessórios para PlayStation, Xbox e PSP - ELISAS TSUNAMI.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================================
+           ESTILOS ESPECÍFICOS DOS ACESSÓRIOS
+           ===================================================== */
+
+        .accessory-card {
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(5, 35, 65, 0.95),
+                    rgba(2, 15, 30, 0.98)
+                );
+            border: 1px solid rgba(0, 174, 255, 0.25);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            transition: 0.3s ease;
+        }
+
+        .accessory-card:hover {
+            transform: translateY(-7px);
+            border-color: #00c8ff;
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.35),
+                0 0 25px rgba(0,174,255,0.25);
+        }
+
+        .accessory-image {
+            height: 230px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0, 191, 255, 0.16),
+                    transparent 65%
+                ),
+                #03152b;
+            overflow: hidden;
+        }
+
+        .accessory-image svg {
+            width: 90%;
+            height: 90%;
+            filter:
+                drop-shadow(0 0 8px rgba(0,191,255,0.4));
+        }
+
+        .accessory-info {
+            padding: 18px;
+        }
+
+        .accessory-info h3 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .accessory-info p {
+            color: #9fc1d6;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .accessory-price {
+            display: block;
+            margin: 12px 0;
+            color: #00d0ff;
+            font-size: 19px;
+            font-weight: 900;
+        }
+
+        .accessory-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .accessory-buttons button {
+            width: 100%;
+        }
+
+        .platform-tag {
+            display: inline-block;
+            padding: 5px 10px;
+            margin-bottom: 9px;
+            border-radius: 20px;
+            background: rgba(0,174,255,0.15);
+            border: 1px solid rgba(0,191,255,0.3);
+            color: #8fe7ff;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+            .accessory-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .accessory-image {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     CABEÇALHO
+     ===================================================== -->
+
+<header>
+
+    <div class="header-container">
+
+        <a href="index.html" class="logo">
+
+            <img
+                src="logo.png"
+                alt="ELISAS TSUNAMI"
+            >
+
+            <div class="logo-text">
+                ELISAS <span>TSUNAMI</span>
+            </div>
+
+        </a>
+
+        <nav>
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="jogos.html">
+                Jogos
+            </a>
+
+            <a href="#acessorios">
+                Acessórios
+            </a>
+
+            <a href="#contactos">
+                Contactos
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            ACESSÓRIOS <span>GAMING</span>
+        </h1>
+
+        <p>
+            Comandos, cabos, carregadores, fones,
+            armazenamento e acessórios para a sua consola.
+        </p>
+
+        <a
+            href="#acessorios"
+            class="btn"
+        >
+            🎮 Ver acessórios
+        </a>
+
+        <a
+            href="https://wa.me/244952497779?text=Olá%20ELISAS%20TSUNAMI,%20quero%20consultar%20os%20acessórios%20disponíveis."
+            target="_blank"
+            class="btn whatsapp"
+        >
+            💬 WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ACESSÓRIOS
+     ===================================================== -->
+
+<section id="acessorios">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>🎮 Acessórios disponíveis</h2>
+
+            <p>
+                Escolha uma categoria ou pesquise pelo acessório.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             PESQUISA
+             ================================================= -->
+
+        <div class="search-container">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="🔎 Pesquisar acessório..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- =================================================
+             FILTROS
+             ================================================= -->
+
+        <div class="categories categorias">
+
+            <button
+                class="active"
+                data-category="todos"
+            >
+                Todos
+            </button>
+
+            <button data-category="PS4">
+                PS4
+            </button>
+
+            <button data-category="PS3">
+                PS3
+            </button>
+
+            <button data-category="PS5">
+                PS5
+            </button>
+
+            <button data-category="XBOX">
+                Xbox
+            </button>
+
+            <button data-category="PSP">
+                PSP
+            </button>
+
+            <button data-category="GERAL">
+                Gaming
+            </button>
+
+        </div>
+
+
+        <div
+            id="contador"
+            style="
+                text-align:center;
+                margin-bottom:25px;
+                color:#8fdfff;
+                font-weight:bold;
+            "
+        >
+            20 acessórios
+        </div>
+
+
+        <!-- =================================================
+             GRELHA
+             ================================================= -->
+
+        <div
+            id="accessoriesGrid"
+            class="games-grid"
+        ></div>
+
+
+        <div
+            id="noResults"
+            class="no-results"
+            style="display:none;"
+        >
+
+            <h3>
+                😕 Nenhum acessório encontrado
+            </h3>
+
+            <p>
+                Tente pesquisar outro nome.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ASSISTÊNCIA
+     ===================================================== -->
+
+<section
+    class="assistance assistencia"
+>
+
+    <div class="container">
+
+        <div class="assistance-box assistencia-box">
+
+            <h3>
+                🔧 Precisa de reparação?
+            </h3>
+
+            <p>
+                Fazemos assistência técnica para comandos,
+                cabos e componentes de equipamentos gaming.
+            </p>
+
+            <a
+                class="btn btn-reparacao"
+                href="https://wa.me/244952497779?text=Olá%20ELISAS%20TSUNAMI,%20quero%20solicitar%20uma%20reparação."
+                target="_blank"
+            >
+                🔧 Solicitar reparação
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACTOS
+     ===================================================== -->
+
+<section
+    id="contactos"
+    class="contact contactos"
+>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                📞 Contacte a ELISAS TSUNAMI
+            </h2>
+
+            <p>
+                Consulte disponibilidade e preços pelo WhatsApp.
+            </p>
+
+        </div>
+
+
+        <div class="contact-box contactos-box">
+
+            <a
+                class="btn whatsapp"
+                href="https://wa.me/244952497779?text=Olá%20ELISAS%20TSUNAMI,%20quero%20comprar%20um%20acessório."
+                target="_blank"
+            >
+                💬 Comprar pelo WhatsApp
+            </a>
+
+            <a
+                class="btn"
+                href="jogos.html"
+            >
+                🎮 Ver jogos
+            </a>
+
+            <a
+                class="btn"
+                href="index.html"
+            >
+                🏠 Página inicial
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RODAPÉ
+     ===================================================== -->
+
+<footer>
+
+    <p>
+        © 2026
+        <strong>ELISAS TSUNAMI</strong>
+    </p>
+
+    <p>
+        Jogos • Acessórios • Assistência Técnica
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     WHATSAPP FLUTUANTE
+     ===================================================== -->
+
+<a
+    href="https://wa.me/244952497779?text=Olá%20ELISAS%20TSUNAMI,%20preciso%20de%20informações%20sobre%20um%20acessório."
+    target="_blank"
+    class="whatsapp-float"
+    aria-label="WhatsApp"
+>
+    ☎
+</a>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script>
+
+const WHATSAPP = "244952497779";
+
+let categoriaAtual = "todos";
+
+
+/* =====================================================
+   ACESSÓRIOS
+   ===================================================== */
+
+const acessorios = [
+
+    {
+        nome: "Comando sem fio DualShock 4",
+        categoria: "PS4",
+        descricao: "Comando sem fio para PlayStation 4.",
+        preco: "Consultar preço",
+        tipo: "controller"
+    },
+
+    {
+        nome: "Cabo USB para comando PS4",
+        categoria: "PS4",
+        descricao: "Cabo para carregar e conectar o comando PS4.",
+        preco: "Consultar preço",
+        tipo: "cable"
+    },
+
+    {
+        nome: "Base de carregamento PS4",
+        categoria: "PS4",
+        descricao: "Base para carregar comandos PS4.",
+        preco: "Consultar preço",
+        tipo: "charger"
+    },
+
+    {
+        nome: "Fone Gamer PS4",
+        categoria: "PS4",
+        descricao: "Fone gaming com microfone.",
+        preco: "Consultar preço",
+        tipo: "headset"
+    },
+
+    {
+        nome: "HD externo para PS4",
+        categoria: "PS4",
+        descricao: "Armazenamento externo para jogos e arquivos.",
+        preco: "Consultar preço",
+        tipo: "harddrive"
+    },
+
+    {
+        nome: "Comando PS3",
+        categoria: "PS3",
+        descricao: "Comando para PlayStation 3.",
+        preco: "Consultar preço",
+        tipo: "controller"
+    },
+
+    {
+        nome: "Cabo USB Mini para PS3",
+        categoria: "PS3",
+        descricao: "Cabo para comando e carregamento PS3.",
+        preco: "Consultar preço",
+        tipo: "cable"
+    },
+
+    {
+        nome: "Base carregadora PS3",
+        categoria: "PS3",
+        descricao: "Base para carregamento de comandos.",
+        preco: "Consultar preço",
+        tipo: "charger"
+    },
+
+    {
+        nome: "Fone Gamer PS3",
+        categoria: "PS3",
+        descricao: "Fone com microfone para gaming.",
+        preco: "Consultar preço",
+        tipo: "headset"
+    },
+
+    {
+        nome: "HD interno para PS3",
+        categoria: "PS3",
+        descricao: "Disco para armazenamento da consola.",
+        preco: "Consultar preço",
+        tipo: "harddrive"
+    },
+
+    {
+        nome: "Comando DualSense PS5",
+        categoria: "PS5",
+        descricao: "Comando sem fio para PlayStation 5.",
+        preco: "Consultar preço",
+        tipo: "controller"
+    },
+
+    {
+        nome: "Cabo USB-C PS5",
+        categoria: "PS5",
+        descricao: "Cabo USB-C para carregar o DualSense.",
+        preco: "Consultar preço",
+        tipo: "cable"
+    },
+
+    {
+        nome: "Base carregadora DualSense",
+        categoria: "PS5",
+        descricao: "Base de carregamento para comandos PS5.",
+        preco: "Consultar preço",
+        tipo: "charger"
+    },
+
+    {
+        nome: "Headset Gamer PS5",
+        categoria: "PS5",
+        descricao: "Headset gaming com microfone.",
+        preco: "Consultar preço",
+        tipo: "headset"
+    },
+
+    {
+        nome: "HD externo PS5",
+        categoria: "PS5",
+        descricao: "Armazenamento externo para jogos.",
+        preco: "Consultar preço",
+        tipo: "harddrive"
+    },
+
+    {
+        nome: "Comando Xbox",
+        categoria: "XBOX",
+        descricao: "Comando sem fio para Xbox.",
+        preco: "Consultar preço",
+        tipo: "controller"
+    },
+
+    {
+        nome: "Cabo USB Xbox",
+        categoria: "XBOX",
+        descricao: "Cabo para comando Xbox.",
+        preco: "Consultar preço",
+        tipo: "cable"
+    },
+
+    {
+        nome: "Headset Gamer Xbox",
+        categoria: "XBOX",
+        descricao: "Headset com microfone para Xbox.",
+        preco: "Consultar preço",
+        tipo: "headset"
+    },
+
+    {
+        nome: "Bateria recarregável Xbox",
+        categoria: "XBOX",
+        descricao: "Bateria recarregável para comando Xbox.",
+        preco: "Consultar preço",
+        tipo: "battery"
+    },
+
+    {
+        nome: "Cartão de memória / armazenamento PSP",
+        categoria: "PSP",
+        descricao: "Armazenamento para PSP.",
+        preco: "Consultar preço",
+        tipo: "memory"
+    },
+
+    {
+        nome: "Bateria PSP",
+        categoria: "PSP",
+        descricao: "Bateria de substituição para PSP.",
+        preco: "Consultar preço",
+        tipo: "battery"
+    },
+
+    {
+        nome: "Carregador PSP",
+        categoria: "PSP",
+        descricao: "Carregador para consola PSP.",
+        preco: "Consultar preço",
+        tipo: "charger"
+    },
+
+    {
+        nome: "Cabo USB PSP",
+        categoria: "PSP",
+        descricao: "Cabo USB para PSP.",
+        preco: "Consultar preço",
+        tipo: "cable"
+    },
+
+    {
+        nome: "Fone Gamer universal",
+        categoria: "GERAL",
+        descricao: "Fone gaming compatível com vários equipamentos.",
+        preco: "Consultar preço",
+        tipo: "headset"
+    },
+
+    {
+        nome: "Cabo HDMI Gaming",
+        categoria: "GERAL",
+        descricao: "Cabo HDMI para ligação da consola à televisão.",
+        preco: "Consultar preço",
+        tipo: "hdmi"
+    },
+
+    {
+        nome: "Suporte para consola",
+        categoria: "GERAL",
+        descricao: "Suporte para organizar a sua consola.",
+        preco: "Consultar preço",
+        tipo: "stand"
+    }
+
+];
+
+
+/* =====================================================
+   SVG DOS ACESSÓRIOS
+   ===================================================== */
+
+function imagemAcessorio(tipo, nome) {
+
+    let desenho = "";
+
+
+    if (tipo === "controller") {
+
+        desenho = `
+        <rect x="100" y="100" width="400" height="230"
+              rx="90"
+              fill="#101820"
+              stroke="#00c8ff"
+              stroke-width="8"/>
+
+        <circle cx="190" cy="210" r="30"
+                fill="#07111c"
+                stroke="#00c8ff"
+                stroke-width="6"/>
+
+        <circle cx="410" cy="190" r="20"
+                fill="#00c8ff"/>
+
+        <circle cx="450" cy="230" r="20"
+                fill="#00c8ff"/>
+
+        <rect x="155" y="185"
+              width="70"
+              height="20"
+              rx="8"
+              fill="#00c8ff"/>
+
+        <rect x="180" y="160"
+              width="20"
+              height="70"
+              rx="8"
+              fill="#00c8ff"/>
+        `;
+
+    } else if (tipo === "headset") {
+
+        desenho = `
+        <path d="M150 250
+                 C150 100 450 100 450 250"
+              fill="none"
+              stroke="#00c8ff"
+              stroke-width="35"/>
+
+        <rect x="120" y="220"
+              width="80"
+              height="150"
+              rx="30"
+              fill="#101820"
+              stroke="#00c8ff"
+              stroke-width="7"/>
+
+        <rect x="400" y="220"
+              width="80"
+              height="150"
+              rx="30"
+              fill="#101820"
+              stroke="#00c8ff"
+              stroke-width="7"/>
+
+        <path d="M200 350 L270 380"
+              stroke="#00c8ff"
+              stroke-width="12"/>
+        `;
+
+    } else if (tipo === "cable" || tipo === "hdmi") {
+
+        desenho = `
+        <path d="M120 220
+                 C180 120 300 320 380 200
+                 C430 130 470 170 500 220"
+              fill="none"
+              stroke="#00c8ff"
+              stroke-width="22"
+              stroke-linecap="round"/>
+
+        <rect x="90" y="190"
+              width="70"
+              height="60"
+              rx="8"
+              fill="#111820"
+              stroke="#00c8ff"
+              stroke-width="6"/>
+
+        <rect x="480" y="190"
+              width="60"
+              height="60"
+              rx="8"
+              fill="#111820"
+              stroke="#00c8ff"
+              stroke-width="6"/>
+        `;
+
+    } else if (tipo === "charger") {
+
+        desenho = `
+        <rect x="150" y="120"
+              width="300"
+              height="300"
+              rx="35"
+              fill="#101820"
+              stroke="#00c8ff"
+              stroke-width="8"/>
+
+        <circle cx="250" cy="260"
+                r="45"
+                fill="none"
+                stroke="#00c8ff"
+                stroke-width="8"/>
+
+        <circle cx="350" cy="260"
+                r="45"
+                fill="none"
+                stroke="#00c8ff"
+                stroke-width="8"/>
+
+        <path d="M250 210 V310"
+              stroke="#00c8ff"
+              stroke-width="8"/>
+
+        <path d="M200 260 H300"
+              stroke="#00c8ff"
+              stroke-width="8"/>
+        `;
+
+    } else if (
+        tipo === "harddrive"
+        ||
+        tipo === "memory"
+    ) {
+
+        desenho = `
+        <rect x="160" y="100"
+              width="280"
+              height="340"
+              rx="25"
+              fill="#101820"
+              stroke="#00c8ff"
+              stroke-width="8"/>
+
+        <circle cx="300" cy="250"
+                r="75"
+                fill="none"
+                stroke="#00c8ff"
+                stroke-width="8"/>
+
+        <circle cx="300" cy="250"
+                r="20"
+                fill="#00c8ff"/>
+
+        <circle cx="300" cy="390"
+                r="8"
+                fill="#00c8ff"/>
+        `;
+
+    } else if (tipo === "battery") {
+
+        desenho = `
+        <rect x="180" y="120"
+              width="240"
+              height="300"
+              rx="25"
+              fill="#101820"
+              stroke="#00c8ff"
+              stroke-width="8"/>
+
+        <rect x="250" y="80"
+              width="100"
+              height="40"
+              rx="10"
+              fill="#00c8ff"/>
+
+        <rect x="235" y="180"
+              width="130"
+              height="190"
+              rx="12"
+              fill="none"
+              stroke="#00c8ff"
+              stroke-width="8"/>
+
+        <path d="M315 205 L270 290 H305 L280 350 L350 255 H315 Z"
+              fill="#00c8ff"/>
+        `;
+
+    } else if (tipo === "stand") {
+
+        desenho = `
+        <path d="M150 170
+                 L450 170
+                 L400 390
+                 L200 390 Z"
+              fill="#101820"
+              stroke="#00c8ff"
+              stroke-width="8"/>
+
+        <rect x="200" 

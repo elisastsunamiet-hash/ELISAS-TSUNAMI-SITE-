@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogos | ELISAS TSUNAMI</title>
+
+    <meta name="description"
+          content="Catálogo de jogos da ELISAS TSUNAMI para PlayStation 3, PlayStation 4, PlayStation 5, Xbox e PSP.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     CABEÇALHO
+     ===================================================== -->
+
+<header>
+
+    <div class="header-container">
+
+        <a href="index.html" class="logo">
+
+            <!--
+                COLOQUE AQUI O SEU LOGO.
+                Se o nome do arquivo for diferente,
+                altere logo.png.
+            -->
+            <img src="logo.png" alt="ELISAS TSUNAMI">
+
+            <div class="logo-text">
+                ELISAS <span>TSUNAMI</span>
+            </div>
+
+        </a>
+
+        <nav>
+
+            <a href="index.html">Início</a>
+
+            <a href="#jogos">Jogos</a>
+
+            <a href="acessorios.html">Acessórios</a>
+
+            <a href="#contactos">Contactos</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            CATÁLOGO DE <span>JOGOS</span>
+        </h1>
+
+        <p>
+            Encontre os seus jogos favoritos para PlayStation,
+            Xbox e PSP.
+        </p>
+
+        <a href="#jogos" class="btn">
+            🎮 Ver jogos
+        </a>
+
+        <a
+            href="https://wa.me/244952497779?text=Olá%20ELISAS%20TSUNAMI,%20quero%20consultar%20os%20jogos%20disponíveis."
+            target="_blank"
+            class="btn whatsapp"
+        >
+            WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CATÁLOGO
+     ===================================================== -->
+
+<section id="jogos">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>🎮 Jogos disponíveis</h2>
+
+            <p>
+                Escolha a plataforma ou pesquise pelo nome do jogo.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             PESQUISA
+             ================================================= -->
+
+        <div class="search-container">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="🔎 Pesquisar jogo..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- =================================================
+             FILTROS
+             ================================================= -->
+
+        <div class="categories categorias">
+
+            <button
+                class="active"
+                data-platform="todos"
+            >
+                Todos
+            </button>
+
+            <button data-platform="PS3">
+                PlayStation 3
+            </button>
+
+            <button data-platform="PS4">
+                PlayStation 4
+            </button>
+
+            <button data-platform="PS5">
+                PlayStation 5
+            </button>
+
+            <button data-platform="XBOX">
+                Xbox
+            </button>
+
+            <button data-platform="PSP">
+                PSP
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CONTADOR
+             ================================================= -->
+
+        <div
+            id="contador"
+            style="
+                text-align:center;
+                margin-bottom:25px;
+                color:#8fdfff;
+                font-weight:bold;
+            "
+        >
+            100 jogos
+        </div>
+
+
+        <!-- =================================================
+             GRELHA
+             ================================================= -->
+
+        <div
+            id="gamesGrid"
+            class="games-grid jogos-grid"
+        ></div>
+
+
+        <!-- =================================================
+             SEM RESULTADOS
+             ================================================= -->
+
+        <div
+            id="noResults"
+            class="no-results"
+            style="display:none;"
+        >
+
+            <h3>😕 Nenhum jogo encontrado</h3>
+
+            <p>
+                Tente outro nome ou escolha outra plataforma.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACTOS
+     ===================================================== -->
+
+<section
+    id="contactos"
+    class="contact contactos"
+>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>📞 Fale com a ELISAS TSUNAMI</h2>
+
+            <p>
+                Quer pedir um jogo? Entre em contacto connosco.
+            </p>
+
+        </div>
+
+
+        <div class="contact-box contactos-box">
+
+            <a
+                class="btn whatsapp"
+                href="https://wa.me/244952497779?text=Olá%20ELISAS%20TSUNAMI,%20quero%20pedir%20um%20jogo."
+                target="_blank"
+            >
+                💬 Pedir pelo WhatsApp
+            </a>
+
+
+            <a
+                class="btn"
+                href="index.html"
+            >
+                🏠 Voltar ao início
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RODAPÉ
+     ===================================================== -->
+
+<footer>
+
+    <p>
+        © 2026
+        <strong>ELISAS TSUNAMI</strong>
+    </p>
+
+    <p>
+        Jogos • Acessórios • Assistência Técnica
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     BOTÃO WHATSAPP FLUTUANTE
+     ===================================================== -->
+
+<a
+    href="https://wa.me/244952497779?text=Olá%20ELISAS%20TSUNAMI,%20preciso%20de%20ajuda%20com%20um%20jogo."
+    target="_blank"
+    class="whatsapp-float"
+    aria-label="WhatsApp"
+>
+    ☎
+</a>
+
+
+<!-- =====================================================
+     JAVASCRIPT DOS JOGOS
+     ===================================================== -->
+
+<script>
+
+const WHATSAPP = "244952497779";
+
+let plataformaAtual = "todos";
+
+
+/* =====================================================
+   100 JOGOS
+   ===================================================== */
+
+const jogos = [
+
+/* =========================
+   PLAYSTATION 3
+   ========================= */
+
+{
+    nome: "Grand Theft Auto V",
+    plataforma: "PS3",
+    ano: "2013"
+},
+
+{
+    nome: "The Last of Us",
+    plataforma: "PS3",
+    ano: "2013"
+},
+
+{
+    nome: "God of War III",
+    plataforma: "PS3",
+    ano: "2010"
+},
+
+{
+    nome: "Uncharted 2: Among Thieves",
+    plataforma: "PS3",
+    ano: "2009"
+},
+
+{
+    nome: "Uncharted 3: Drake's Deception",
+    plataforma: "PS3",
+    ano: "2011"
+},
+
+{
+    nome: "Red Dead Redemption",
+    plataforma: "PS3",
+    ano: "2010"
+},
+
+{
+    nome: "Call of Duty: Black Ops II",
+    plataforma: "PS3",
+    ano: "2012"
+},
+
+{
+    nome: "Call of Duty: Modern Warfare 3",
+    plataforma: "PS3",
+    ano: "2011"
+},
+
+{
+    nome: "FIFA 19",
+    plataforma: "PS3",
+    ano: "2018"
+},
+
+{
+    nome: "Pro Evolution Soccer 2018",
+    plataforma: "PS3",
+    ano: "2017"
+},
+
+{
+    nome: "Minecraft",
+    plataforma: "PS3",
+    ano: "2013"
+},
+
+{
+    nome: "Mortal Kombat",
+    plataforma: "PS3",
+    ano: "2011"
+},
+
+{
+    nome: "Batman: Arkham City",
+    plataforma: "PS3",
+    ano: "2011"
+},
+
+{
+    nome: "Assassin's Creed IV: Black Flag",
+    plataforma: "PS3",
+    ano: "2013"
+},
+
+{
+    nome: "Far Cry 3",
+    plataforma: "PS3",
+    ano: "2012"
+},
+
+{
+    nome: "Need for Speed: Most Wanted",
+    plataforma: "PS3",
+    ano: "2012"
+},
+
+{
+    nome: "Gran Turismo 6",
+    plataforma: "PS3",
+    ano: "2013"
+},
+
+{
+    nome: "Metal Gear Solid 4",
+    plataforma: "PS3",
+    ano: "2008"
+},
+
+{
+    nome: "Darksiders II",
+    plataforma: "PS3",
+    ano: "2012"
+},
+
+{
+    nome: "Resident Evil 6",
+    plataforma: "PS3",
+    ano: "2012"
+},
+
+
+/* =========================
+   PLAYSTATION 4
+   ========================= */
+
+{
+    nome: "Grand Theft Auto V",
+    plataforma: "PS4",
+    ano: "2014"
+},
+
+{
+    nome: "God of War",
+    plataforma: "PS4",
+    ano: "2018"
+},
+
+{
+    nome: "The Last of Us Part II",
+    plataforma: "PS4",
+    ano: "2020"
+},
+
+{
+    nome: "Marvel's Spider-Man",
+    plataforma: "PS4",
+    ano: "2018"
+},
+
+{
+    nome: "Red Dead Redemption 2",
+    plataforma: "PS4",
+    ano: "2018"
+},
+
+{
+    nome: "Uncharted 4: A Thief's End",
+    plataforma: "PS4",
+    ano: "2016"
+},
+
+{
+    nome: "Horizon Zero Dawn",
+    plataforma: "PS4",
+    ano: "2017"
+},
+
+{
+    nome: "Ghost of Tsushima",
+    plataforma: "PS4",
+    ano: "2020"
+},
+
+{
+    nome: "FIFA 23",
+    plataforma: "PS4",
+    ano: "2022"
+},
+
+{
+    nome: "EA Sports FC 24",
+    plataforma: "PS4",
+    ano: "2023"
+},
+
+{
+    nome: "Call of Duty: Modern Warfare",
+    plataforma: "PS4",
+    ano: "2019"
+},
+
+{
+    nome: "Call of Duty: Black Ops III",
+    plataforma: "PS4",
+    ano: "2015"
+},
+
+{
+    nome: "Mortal Kombat 11",
+    plataforma: "PS4",
+    ano: "2019"
+},
+
+{
+    nome: "Resident Evil 2",
+    plataforma: "PS4",
+    ano: "2019"
+},
+
+{
+    nome: "Resident Evil 3",
+    plataforma: "PS4",
+    ano: "2020"
+},
+
+{
+    nome: "Far Cry 5",
+    plataforma: "PS4",
+    ano: "2018"
+},
+
+{
+    nome: "Assassin's Creed Odyssey",
+    plataforma: "PS4",
+    ano: "2018"
+},
+
+{
+    nome: "Need for Speed Heat",
+    plataforma: "PS4",
+    ano: "2019"
+},
+
+{
+    nome: "Minecraft",
+    plataforma: "PS4",
+    ano: "2014"
+},
+
+{
+    nome: "The Witcher 3: Wild Hunt",
+    plataforma: "PS4",
+    ano: "2015"
+},
+
+
+/* =========================
+   PLAYSTATION 5
+   ========================= */
+
+{
+    nome: "Marvel's Spider-Man 2",
+    plataforma: "PS5",
+    ano: "2023"
+},
+
+{
+    nome: "God of War Ragnarök",
+    plataforma: "PS5",
+    ano: "2022"
+},
+
+{
+    nome: "Demon's Souls",
+    plataforma: "PS5",
+    ano: "2020"
+},
+
+{
+    nome: "Ratchet & Clank: Rift Apart",
+    plataforma: "PS5",
+    ano: "2021"
+},
+
+{
+    nome: "Horizon Forbidden West",
+    plataforma: "PS5",
+    ano: "2022"
+},
+
+{
+    nome: "Gran Turismo 7",
+    plataforma: "PS5",
+    ano: "2022"
+},
+
+{
+    nome: "Returnal",
+    plataforma: "PS5",
+    ano: "2021"
+},
+
+{
+    nome: "Resident Evil Village",
+    plataforma: "PS5",
+    ano: "2021"
+},
+
+{
+    nome: "Resident Evil 4",
+    plataforma: "PS5",
+    ano: "2023"
+},
+
+{
+    nome: "Final Fantasy VII Rebirth",
+    plataforma: "PS5",
+    ano: "2024"
+},
+
+{
+    nome: "Final Fantasy XVI",
+    plataforma: "PS5",
+    ano: "2023"
+},
+
+{
+    nome: "Astro Bot",
+    plataforma: "PS5",
+    ano: "2024"
+},
+
+{
+    nome: "Stellar Blade",
+    plataforma: "PS5",
+    ano: "2024"
+},
+
+{
+    nome: "Black Myth: Wukong",
+    plataforma: "PS5",
+    ano: "2024"
+},
+
+{
+    nome: "EA Sports FC 24",
+    plataforma: "PS5",
+    ano: "2023"
+},
+
+{
+    nome: "EA Sports FC 25",
+    plataforma: "PS5",
+    ano: "2024"
+},
+
+{
+    nome: "Call of Duty: Black Ops 6",
+    plataforma: "PS5",
+    ano: "2024"
+},
+
+{
+    nome: "Mortal Kombat 1",
+    plataforma: "PS5",
+    ano: "2023"
+},
+
+{
+    nome: "Alan Wake 2",
+    plataforma: "PS5",
+    ano: "2023"
+},
+
+{
+    nome: "Assassin's Creed Shadows",
+    plataforma: "PS5",
+    ano: "2025"
+},
+
+
+/* =========================
+   XBOX
+   ========================= */
+
+{
+    nome: "Halo Infinite",
+    plataforma: "XBOX",
+    ano: "2021"
+},
+
+{
+    nome: "Forza Horizon 5",
+    plataforma: "XBOX",
+    ano: "2021"
+},
+
+{
+    nome: "Gears 5",
+    plataforma: "XBOX",
+    ano: "2019"
+},
+
+{
+    nome: "Sea of Thieves",
+    plataforma: "XBOX",
+    ano: "2018"
+},
+
+{
+    nome: "Starfield",
+    plataforma: "XBOX",
+    ano: "2023"
+},
+
+{
+    nome: "Forza Motorsport",
+    plataforma: "XBOX",
+    ano: "2023"
+},
+
+{
+    nome: "Halo 5: Guardians",
+    plataforma: "XBOX",
+    ano: "2015"
+},
+
+{
+    nome: "Halo: The Master Chief Collection",
+    plataforma: "XBOX",
+    ano: "2014"
+},
+
+{
+    nome: "Gears of War 4",
+    plataforma: "XBOX",
+    ano: "2016"
+},
+
+{
+    nome: "Gears of War 3",
+    plataforma: "XBOX",
+    ano: "2011"
+},
+
+{
+    nome: "Red Dead Redemption 2",
+    plataforma: "XBOX",
+    ano: "2018"
+},
+
+{
+    nome: "Grand Theft Auto V",
+    plataforma: "XBOX",
+    ano: "2013"
+},
+
+{
+    nome: "Mortal Kombat 11",
+    plataforma: "XBOX",
+    ano: "2019"
+},
+
+{
+    nome: "Mortal Kombat 1",
+    plataforma: "XBOX",
+    ano: "2023"
+},
+
+{
+    nome: "Resident Evil Village",
+    plataforma: "XBOX",
+    ano: "2021"
+},
+
+{
+    nome: "Assassin's Creed Valhalla",
+    plataforma: "XBOX",
+    ano: "2020"
+},
+
+{
+    nome: "Far Cry 6",
+    plataforma: "XBOX",
+    ano: "2021"
+},
+
+{
+    nome: "Cyberpunk 2077",
+    plataforma: "XBOX",
+    ano: "2020"
+},
+
+{
+    nome: "EA Sports FC 24",
+    plataforma: "XBOX",
+    ano: "2023"
+},
+
+{
+    nome: "Call of Duty: Black Ops 6",
+    plataforma: "XBOX",
+    ano: "2024"
+},
+
+
+/* =========================
+   PSP
+   ========================= */
+
+{
+    nome: "God of War: Chains of Olympus",
+    plataforma: "PSP",
+    ano: "2008"
+},
+
+{
+    nome: "God of War: Ghost of Sparta",
+    plataforma: "PSP",
+    ano: "2010"
+},
+
+{
+    nome: "Grand Theft Auto: Liberty City Stories",
+    plataforma: "PSP",
+    ano: "2005"
+},
+
+{
+    nome: "Grand Theft Auto: Vice City Stories",
+    plataforma: "PSP",
+    ano: "2006"
+},
+
+{
+    nome: "FIFA 14",
+    plataforma: "PSP",
+    ano: "2013"
+},
+
+{
+    nome: "Pro Evolution Soccer 2014",
+    plataforma: "PSP",
+    ano: "2013"
+},
+
+{
+    nome: "Tekken 6",
+    plataforma: "PSP",
+    ano: "2009"
+},
+
+{
+    nome: "Mortal Kombat: Unchained",
+    plataforma: "PSP",
+    ano: "2006"
+},
+
+{
+    nome: "Dragon Ball Z: Shin Budokai",
+    plataforma: "PSP",
+    ano: "2006"
+},
+
+{
+    nome: "Dragon Ball Z: Shin Budokai 2",
+    plataforma: "PSP",
+    ano: "2007"
+},
+
+{
+    nome: "Naruto: Ultimate Ninja Heroes",
+    plataforma: "PSP",
+    ano: "2006"
+},
+
+{
+    nome: "Naruto Shippuden: Ultimate Ninja Heroes 3",
+    plataforma: "PSP",
+    ano: "2009"
+},
+
+{
+    nome: "Need for Speed: Most Wanted",
+    plataforma: "PSP",
+    ano: "2005"
+},
+
+{
+    nome: "Need for Speed: Carbon",
+    plataforma: "PSP",
+    ano: "2006"
+},
+
+{
+    nome: "Burnout Legends",
+    plataforma: "PSP",
+    ano: "2005"
+},
+
+{
+    nome: "Midnight Club 3: DUB Edition",
+    plataforma: "PSP",
+    ano: "2005"
+},
+
+{
+    nome: "Assassin's Creed: Bloodlines",
+    plataforma: "PSP",
+    ano: "2009"
+},
+
+{
+    nome: "Metal Gear Solid: Peace Walker",
+    plataforma: "PSP",
+    ano: "2010"
+},
+
+{
+    nome: "Daxter",
+    plataforma: "PSP",
+    ano: "2006"
+},
+
+{
+    nome: "LittleBigPlanet",
+    plataforma: "PSP",
+    ano: "2009"
+}
+
+];
+
+
+/* =====================================================
+   ELEMENTOS
+   ===================================================== */
+
+const grid = document.getElementById("gamesGrid");
+
+const pesquisa = document.getElementById("searchInput");
+
+const contador = document.getElementById("contador");
+
+const noResults = document.getElementById("noResults");
+
+const botoes = document.querySelectorAll(
+    "[data-platform]"
+);
+
+
+/* =====================================================
+   CRIAR URL DA CAPA
+   ===================================================== */
+
+function gerarCapa(nome) {
+
+    /*
+       A Wikipédia será consultada automaticamente
+       para encontrar a miniatura da página do jogo.
+    */
+
+    return "https://en.wikipedia.org/api/rest_v1/page/summary/"
+        + encodeURIComponent(nome);
+
+}
+
+
+/* =====================================================
+   CAPA DE RESERVA
+   ===================================================== */
+
+function capaReserva(nome) {
+
+    return "https://placehold.co/600x800/03152b/00c8ff?text="
+        + encodeURIComponent(nome);
+
+}
+
+
+/* =====================================================
+   WHATSAPP
+   ===================================================== */
+
+function pedirJogo(nome, plataforma) {
+
+    const mensagem =
+        "Olá ELISAS TSUNAMI! Quero pedir o jogo: "
+        + nome
+        + " para "
+        + plataforma
+        + ".";
+
+    const url =
+        "https://wa.me/"
+        + WHATSAPP
+        + "?text="
+        + encodeURIComponent(mensagem);
+
+    window.open(url, "_blank");
+
+}
+
+
+/* =====================================================
+   MOSTRAR JOGOS
+   ===================================================== */
+
+function mostrarJogos() {
+
+    const termo =
+        pesquisa.value
+            .trim()
+            .toLowerCase();
+
+
+    const filtrados = jogos.filter(jogo => {
+
+        const correspondePlataforma =
+            plataformaAtual === "todos"
+            ||
+            jogo.plataforma === plataformaAtual;
+
+
+        const correspondePesquisa =
+            jogo.nome
+                .toLowerCase()
+                .includes(termo);
+
+
+        return
+            correspondePlataforma
+            &&
+            correspondePesquisa;
+
+    });
+
+
+    grid.innerHTML = "";
+
+
+    contador.textContent =
+        filtrados.length
+        +
+        (filtrados.length === 1
+            ? " jogo encontrado"
+            : " jogos encontrados");
+
+
+    if (filtrados.length === 0) {
+
+        noResults.style.display = "block";
+
+        return;
+
+    }
+
+
+    noResults.style.display = "none";
+
+
+    filtrados.forEach((jogo, index) => {
+
+        const card =
+            document.createElement("article");
+
+
+        card.className =
+            "game-card jogo-card";
+
+
+        card.innerHTML = `
+
+            <img
+                id="capa-${index}"
+                src="${capaReserva(jogo.nome)}"
+                alt="Capa de ${jogo.nome}"
+                loading="lazy"
+            >
+
+            <div class="game-info jogo-info">
+
+                <span class="badge">
+                    ${jogo.plataforma}
+                </span>
+
+                <h3>
+                    ${jogo.nome}
+                </h3>
+
+                <p>
+                    Plataforma:
+                    <strong>${jogo.plataforma}</strong>
+                </p>
+
+                <p>
+                    Ano: ${jogo.ano}
+                </p>
+
+                <button
+                    class="btn"
+                    type="button"
+                    onclick="verDetalhes('${jogo.nome.replace(/'/g, "\\'")}', '${jogo.plataforma}', '${jogo.ano}')"
+                >
+                    👁️ Ver detalhes
+                </button>
+
+                <button
+                    class="btn whatsapp"
+                    type="button"
+                    onclick="pedirJogo('${jogo.nome.replace(/'/g, "\\'")}', '${jogo.plataforma}')"
+                >
+                    💬 Pedir jogo
+                </button>
+
+            </div>
+        `;
+
+
+        grid.appendChild(card);
+
+
+        /*
+           Procurar capa na Wikipédia.
+        */
+
+        buscarCapa(
+            jogo.nome,
+            `capa-${index}`
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   BUSCAR CAPA
+   ===================================================== */
+
+async function buscarCapa(nome, id) {
+
+    try {
+
+        const resposta =
+            await fetch(gerarCapa(nome));
+
+
+        if (!resposta.ok) {
+
+            return;
+
+        }
+
+
+        const dados =
+            await resposta.json();
+
+
+        if (
+            dados.thumbnail
+            &&
+            dados.thumbnail.source
+        ) {
+
+            const imagem =
+                document.getElementById(id);
+
+
+            if (imagem) {
+
+                imagem.src =
+                    dados.thumbnail.source;
+
+            }
+
+        }
+
+    } catch (erro) {
+
+        console.log(
+            "Capa não encontrada:",
+            nome
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   DETALHES
+   ===================================================== */
+
+function verDetalhes(
+    nome,
+    plataforma,
+    ano
+) {
+
+    const mensagem =
+        "Olá ELISAS TSUN
